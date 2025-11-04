@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - EA Castro Landscaping | Get Your Free Quote Today</title>
+    <meta name="description" content="Contact EA Castro Landscaping for professional landscaping services in Huntington Station, NY. Call (555) 123-4567 or request a free quote online.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>EA Castro Landscaping</h2>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+                <a href="tel:+16316971674" class="nav-cta">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch for your free landscaping quote</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <div class="form-header">
+                        <h2>Request Your Free Quote</h2>
+                        <p>Fill out the form below and we'll get back to you within 24 hours</p>
+                    </div>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Property Address</label>
+                            <input type="text" id="address" name="address" placeholder="Street address, City, State ZIP">
+                        </div>
+                        <div class="form-group">
+                            <label for="services">Services Interested In</label>
+                            <select id="services" name="services" multiple>
+                                <option value="lawn-mowing">Lawn Mowing & Maintenance</option>
+                                <option value="mulching">Mulching</option>
+                                <option value="fence-installation">Fence Installation</option>
+                                <option value="weed-control">Weed Control</option>
+                                <option value="pest-control">Lawn Pest Control</option>
+                                <option value="yard-work">Yard Work</option>
+                                <option value="landscape-design">Landscape Design</option>
+                                <option value="sod-installation">Sod Installation</option>
+                                <option value="hedge-trimming">Hedge Trimming</option>
+                                <option value="irrigation">Irrigation System Repair & Maintenance</option>
+                                <option value="grass-seeding">Grass Seeding</option>
+                                <option value="gutter-cleaning">Gutter Cleaning</option>
+                                <option value="aeration">Aeration & Overseed</option>
+                                <option value="planting">Planting</option>
+                                <option value="spring-cleanup">Spring Cleanup</option>
+                                <option value="fall-cleanup">Fall Cleanup</option>
+                                <option value="snow-removal">Snow Removal</option>
+                            </select>
+                            <small>Hold Ctrl (Windows) or Cmd (Mac) to select multiple services</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="projectType">Project Type</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="projectType" value="one-time">
+                                    <span>One-time Service</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="projectType" value="ongoing">
+                                    <span>Ongoing Maintenance</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="projectType" value="both">
+                                    <span>Both</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="budget">Estimated Budget Range</label>
+                            <select id="budget" name="budget">
+                                <option value="">Select Budget Range</option>
+                                <option value="under-500">Under $500</option>
+                                <option value="500-1000">$500 - $1,000</option>
+                                <option value="1000-2500">$1,000 - $2,500</option>
+                                <option value="2500-5000">$2,500 - $5,000</option>
+                                <option value="over-5000">Over $5,000</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="timeline">Preferred Timeline</label>
+                            <select id="timeline" name="timeline">
+                                <option value="">Select Timeline</option>
+                                <option value="asap">As Soon As Possible</option>
+                                <option value="within-week">Within 1 Week</option>
+                                <option value="within-month">Within 1 Month</option>
+                                <option value="flexible">Flexible</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Please describe your landscaping needs, project details, or any specific requirements..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <h3>Get In Touch</h3>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Call Us</h4>
+                                    <p><a href="tel:+16316971674">(631) 697-1674</a></p>
+                                    <small>Mon-Fri: 7:00 AM - 6:00 PM<br>Sat: 8:00 AM - 4:00 PM</small>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Email Us</h4>
+                                    <p><a href="mailto:info@eacastrolandscaping.com">info@eacastrolandscaping.com</a></p>
+                                    <small>We respond within 24 hours</small>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Visit Us</h4>
+                                    <p>111 W 21st<br>Huntington Station, NY 11746</p>
+                                    <small>By appointment only</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Area Map -->
+                    <div class="service-area-card">
+                        <h3>Service Areas</h3>
+                        <p>We proudly serve Huntington Station and surrounding communities:</p>
+                        <ul class="area-list">
+                            <li><i class="fas fa-check"></i> Huntington Station</li>
+                            <li><i class="fas fa-check"></i> Huntington</li>
+                            <li><i class="fas fa-check"></i> Melville</li>
+                            <li><i class="fas fa-check"></i> Commack</li>
+                            <li><i class="fas fa-check"></i> Dix Hills</li>
+                            <li><i class="fas fa-check"></i> Half Hollow Hills</li>
+                        </ul>
+                        <p><small>Don't see your area? <a href="tel:+16316971674">Call us</a> - we may still be able to help!</small></p>
+                    </div>
+
+                    <!-- Emergency Services -->
+                    <div class="emergency-card">
+                        <h3>Emergency Services</h3>
+                        <div class="emergency-content">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <div>
+                                <p><strong>Tree Damage or Storm Cleanup?</strong></p>
+                                <p>We offer emergency landscaping services for storm damage, fallen trees, and urgent cleanup needs.</p>
+                                <a href="tel:+16316971674" class="emergency-btn">
+                                    <i class="fas fa-phone"></i> Emergency Line
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about our landscaping services</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>Do you provide free estimates?</h4>
+                    <p>Yes! We provide detailed, no-obligation estimates for all our landscaping services. Contact us to schedule your free consultation.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Are you licensed and insured?</h4>
+                    <p>Absolutely. EA Castro Landscaping is fully licensed and insured for your protection and peace of mind.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>How quickly can you start my project?</h4>
+                    <p>Project timelines vary depending on the scope and season. During our consultation, we'll provide you with a realistic timeline for your specific project.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Do you offer seasonal maintenance plans?</h4>
+                    <p>Yes! We offer comprehensive seasonal maintenance plans that can include regular lawn care, spring and fall cleanups, and ongoing landscape maintenance.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What areas do you service?</h4>
+                    <p>We primarily serve Huntington Station and surrounding areas including Huntington, Melville, Commack, Dix Hills, and Half Hollow Hills.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Do you work year-round?</h4>
+                    <p>Yes! We provide year-round services including spring and fall cleanups, ongoing maintenance, and winter snow removal services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>EA Castro Landscaping</h3>
+                    <p>Professional landscaping services in Huntington Station, NY and surrounding areas.</p>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> 111 W 21st, Huntington Station NY 11746</p>
+                        <p><i class="fas fa-phone"></i> (631) 697-1674</p>
+                        <p><i class="fas fa-envelope"></i> info@eacastrolandscaping.com</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Lawn Mowing & Maintenance</a></li>
+                        <li><a href="services.html">Landscape Design</a></li>
+                        <li><a href="services.html">Mulching</a></li>
+                        <li><a href="services.html">Fence Installation</a></li>
+                        <li><a href="services.html">Irrigation Systems</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-google"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EA Castro Landscaping. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
