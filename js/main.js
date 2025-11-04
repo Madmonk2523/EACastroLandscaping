@@ -705,3 +705,119 @@ function isBusinessOpen() {
     
     return false;
 }
+
+// ===== MODAL FUNCTIONALITY =====
+
+// Get modal elements
+const contactModal = document.getElementById('contactModal');
+const callModal = document.getElementById('callModal');
+
+// Modal functions
+function openContactModal() {
+    if (contactModal) {
+        contactModal.style.display = 'flex';
+        contactModal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+        
+        // Focus on first input
+        setTimeout(() => {
+            const firstInput = contactModal.querySelector('input');
+            if (firstInput) firstInput.focus();
+        }, 100);
+    }
+}
+
+function openCallModal() {
+    if (callModal) {
+        callModal.style.display = 'flex';
+        callModal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeModal(modal) {
+    if (modal) {
+        modal.style.display = 'none';
+        modal.classList.remove('show');
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Close modal events
+if (contactModal) {
+    const contactClose = document.getElementById('contactModalClose');
+    if (contactClose) {
+        contactClose.addEventListener('click', () => closeModal(contactModal));
+    }
+    
+    // Close on backdrop click
+    contactModal.addEventListener('click', (e) => {
+        if (e.target === contactModal) {
+            closeModal(contactModal);
+        }
+    });
+}
+
+if (callModal) {
+    const callClose = document.getElementById('callModalClose');
+    const closeCallBtn = document.getElementById('closeCallModal');
+    
+    if (callClose) {
+        callClose.addEventListener('click', () => closeModal(callModal));
+    }
+    
+    if (closeCallBtn) {
+        closeCallBtn.addEventListener('click', () => closeModal(callModal));
+    }
+    
+    // Close on backdrop click
+    callModal.addEventListener('click', (e) => {
+        if (e.target === callModal) {
+            closeModal(callModal);
+        }
+    });
+}
+
+// Close modals with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeModal(contactModal);
+        closeModal(callModal);
+    }
+});
+
+// Modal contact form submission
+const modalContactForm = document.getElementById('modalContactForm');
+if (modalContactForm) {
+    modalContactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(modalContactForm);
+        const data = Object.fromEntries(formData);
+        
+        // Show success message
+        const modalBody = modalContactForm.closest('.modal-body');
+        modalBody.innerHTML = `
+            <div class="success-message" style="text-align: center; padding: 40px 20px;">
+                <i class="fas fa-check-circle" style="font-size: 4rem; color: var(--primary-color); margin-bottom: 20px;"></i>
+                <h3 style="color: var(--primary-color); margin-bottom: 15px;">Thank You!</h3>
+                <p style="margin-bottom: 25px;">We've received your quote request and will contact you within 24 hours.</p>
+                <button class="btn btn-primary" onclick="closeModal(contactModal)">Close</button>
+            </div>
+        `;
+        
+        // Auto-close after 3 seconds
+        setTimeout(() => {
+            closeModal(contactModal);
+            // Reset form
+            modalContactForm.reset();
+            // Restore original modal body content
+            location.reload();
+        }, 3000);
+    });
+}
+
+// Make modal functions globally available
+window.openContactModal = openContactModal;
+window.openCallModal = openCallModal;
