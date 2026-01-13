@@ -47,8 +47,8 @@
                     From lawn maintenance to complete landscape design - we bring your vision to life.
                 </p>
                 <div class="hero-buttons">
-                    <button class="btn btn-primary" onclick="openContactModal()">Get Free Quote</button>
                     <a href="services.html" class="btn btn-secondary">View Services</a>
+                    <a href="contact.html" class="btn btn-primary">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -152,9 +152,9 @@
         <div class="container">
             <div class="cta-content">
                 <h2>Ready to Transform Your Landscape?</h2>
-                <p>Get a free quote today and discover how we can enhance your outdoor space.</p>
+                <p>Contact us today and discover how we can enhance your outdoor space.</p>
                 <div class="cta-buttons">
-                    <button class="btn btn-white" onclick="openContactModal()">Get Free Quote</button>
+                    <a href="contact.html" class="btn btn-white">Contact Us</a>
                     <button class="btn btn-outline-white" onclick="openCallModal()">
                         <i class="fas fa-phone"></i> Call Now
                     </button>
@@ -209,50 +209,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Contact Form Modal -->
-    <div id="contactModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Request Your Free Quote</h2>
-                <span class="close" id="contactModalClose">&times;</span>
-            </div>
-            <div class="modal-body">
-                <form class="modal-contact-form" id="modalContactForm">
-                    <div class="form-group">
-                        <input type="text" id="modalName" name="name" required>
-                        <label for="modalName">Full Name</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="modalEmail" name="email" required>
-                        <label for="modalEmail">Email Address</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" id="modalPhone" name="phone" required>
-                        <label for="modalPhone">Phone Number</label>
-                    </div>
-                    <div class="form-group">
-                        <select id="modalService" name="service" required>
-                            <option value="">Select a Service</option>
-                            <option value="lawn-care">Lawn Care & Maintenance</option>
-                            <option value="landscape-design">Landscape Design</option>
-                            <option value="tree-service">Tree Services</option>
-                            <option value="hardscaping">Hardscaping</option>
-                            <option value="irrigation">Irrigation Systems</option>
-                            <option value="seasonal">Seasonal Cleanup</option>
-                            <option value="other">Other</option>
-                        </select>
-                        <label for="modalService">Service Needed</label>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="modalMessage" name="message" rows="4"></textarea>
-                        <label for="modalMessage">Project Details</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Quote Request</button>
-                </form>
-            </div>
-        </div>
-    </div>
 
     <!-- Call Modal -->
     <div id="callModal" class="modal">

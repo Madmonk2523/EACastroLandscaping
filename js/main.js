@@ -70,140 +70,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ===== CONTACT FORM FUNCTIONALITY =====
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            handleContactForm(this);
-        });
-
-        // Form validation
-        const requiredFields = contactForm.querySelectorAll('[required]');
-        requiredFields.forEach(field => {
-            field.addEventListener('blur', validateField);
-            field.addEventListener('input', clearFieldError);
-        });
-    }
-
-    function validateField(e) {
-        const field = e.target;
-        const value = field.value.trim();
-        
-        // Remove existing error messages
-        clearFieldError(e);
-        
-        if (!value) {
-            showFieldError(field, 'This field is required');
-            return false;
-        }
-
-        // Email validation
-        if (field.type === 'email') {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(value)) {
-                showFieldError(field, 'Please enter a valid email address');
-                return false;
-            }
-        }
-
-        // Phone validation
-        if (field.type === 'tel') {
-            const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
-            const cleanPhone = value.replace(/\D/g, '');
-            if (cleanPhone.length < 10) {
-                showFieldError(field, 'Please enter a valid phone number');
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-    function showFieldError(field, message) {
-        const formGroup = field.closest('.form-group');
-        const existingError = formGroup.querySelector('.error-message');
-        
-        if (!existingError) {
-            const errorElement = document.createElement('span');
-            errorElement.className = 'error-message';
-            errorElement.style.color = '#e74c3c';
-            errorElement.style.fontSize = '14px';
-            errorElement.style.marginTop = '5px';
-            errorElement.textContent = message;
-            formGroup.appendChild(errorElement);
-        }
-        
-        field.style.borderColor = '#e74c3c';
-    }
-
-    function clearFieldError(e) {
-        const field = e.target;
-        const formGroup = field.closest('.form-group');
-        const errorMessage = formGroup.querySelector('.error-message');
-        
-        if (errorMessage) {
-            errorMessage.remove();
-        }
-        
-        field.style.borderColor = '';
-    }
-
-    function handleContactForm(form) {
-        const formData = new FormData(form);
-        const data = {};
-        
-        // Collect form data
-        for (let [key, value] of formData.entries()) {
-            if (data[key]) {
-                // Handle multiple selections
-                if (Array.isArray(data[key])) {
-                    data[key].push(value);
-                } else {
-                    data[key] = [data[key], value];
-                }
-            } else {
-                data[key] = value;
-            }
-        }
-
-        // Validate required fields
-        const requiredFields = form.querySelectorAll('[required]');
-        let isValid = true;
-
-        requiredFields.forEach(field => {
-            if (!validateField({ target: field })) {
-                isValid = false;
-            }
-        });
-
-        if (!isValid) {
-            showNotification('Please correct the errors in the form', 'error');
-            return;
-        }
-
-        // Show loading state
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-        submitBtn.disabled = true;
-
-        // Simulate form submission (replace with actual submission logic)
-        setTimeout(() => {
-            // Success simulation
-            showNotification('Thank you! Your message has been sent. We\'ll get back to you within 24 hours.', 'success');
-            form.reset();
-            
-            // Reset button
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-            
-            // In a real application, you would send this data to your server
-            console.log('Form data:', data);
-            
-        }, 2000);
-    }
-
     // ===== NOTIFICATION SYSTEM =====
     function showNotification(message, type = 'info') {
         const notification = document.createElement('div');
@@ -709,24 +575,9 @@ function isBusinessOpen() {
 // ===== MODAL FUNCTIONALITY =====
 
 // Get modal elements
-const contactModal = document.getElementById('contactModal');
 const callModal = document.getElementById('callModal');
 
 // Modal functions
-function openContactModal() {
-    if (contactModal) {
-        contactModal.style.display = 'flex';
-        contactModal.classList.add('show');
-        document.body.style.overflow = 'hidden';
-        
-        // Focus on first input
-        setTimeout(() => {
-            const firstInput = contactModal.querySelector('input');
-            if (firstInput) firstInput.focus();
-        }, 100);
-    }
-}
-
 function openCallModal() {
     if (callModal) {
         callModal.style.display = 'flex';
@@ -744,19 +595,6 @@ function closeModal(modal) {
 }
 
 // Close modal events
-if (contactModal) {
-    const contactClose = document.getElementById('contactModalClose');
-    if (contactClose) {
-        contactClose.addEventListener('click', () => closeModal(contactModal));
-    }
-    
-    // Close on backdrop click
-    contactModal.addEventListener('click', (e) => {
-        if (e.target === contactModal) {
-            closeModal(contactModal);
-        }
-    });
-}
 
 if (callModal) {
     const callClose = document.getElementById('callModalClose');
@@ -781,43 +619,9 @@ if (callModal) {
 // Close modals with Escape key
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-        closeModal(contactModal);
         closeModal(callModal);
     }
 });
 
-// Modal contact form submission
-const modalContactForm = document.getElementById('modalContactForm');
-if (modalContactForm) {
-    modalContactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(modalContactForm);
-        const data = Object.fromEntries(formData);
-        
-        // Show success message
-        const modalBody = modalContactForm.closest('.modal-body');
-        modalBody.innerHTML = `
-            <div class="success-message" style="text-align: center; padding: 40px 20px;">
-                <i class="fas fa-check-circle" style="font-size: 4rem; color: var(--primary-color); margin-bottom: 20px;"></i>
-                <h3 style="color: var(--primary-color); margin-bottom: 15px;">Thank You!</h3>
-                <p style="margin-bottom: 25px;">We've received your quote request and will contact you within 24 hours.</p>
-                <button class="btn btn-primary" onclick="closeModal(contactModal)">Close</button>
-            </div>
-        `;
-        
-        // Auto-close after 3 seconds
-        setTimeout(() => {
-            closeModal(contactModal);
-            // Reset form
-            modalContactForm.reset();
-            // Restore original modal body content
-            location.reload();
-        }, 3000);
-    });
-}
-
 // Make modal functions globally available
-window.openContactModal = openContactModal;
 window.openCallModal = openCallModal;
