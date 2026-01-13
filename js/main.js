@@ -514,12 +514,10 @@ document.addEventListener('DOMContentLoaded', function() {
     Website features:
     ✅ Responsive design
     ✅ Smooth scrolling
-    ✅ Interactive contact form
     ✅ Mobile-friendly navigation
     ✅ Accessibility features
     
-    Contact: (555) 123-4567
-    Email: info@eacastrolandscaping.com
+    Contact: (631) 697-1674
     `);
 });
 

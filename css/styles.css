@@ -1320,6 +1320,62 @@ body {
     margin-bottom: 0;
 }
 
+/* ===== TESTIMONIALS SECTION ===== */
+.testimonials {
+    padding: 80px 20px;
+    background-color: var(--bg-light);
+}
+
+.testimonials .section-header {
+    margin-bottom: 60px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid var(--primary-color);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-card .stars {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 5px;
+}
+
+.testimonial-card .stars i {
+    color: #ffc107;
+    font-size: 16px;
+}
+
+.testimonial-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.testimonial-card h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0;
+}
+
 /* ===== STUNNING CTA SECTION ===== */
 .cta-section {
     background: linear-gradient(135deg, 
